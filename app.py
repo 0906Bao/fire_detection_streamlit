@@ -12,7 +12,7 @@ st.write("Ứng dụng sử dụng mô hình Deep Learning CNN để nhận di�
 st.markdown("---")
 
 # Cố định ngưỡng cảnh báo mặc định
-THRESHOLD = 0.5
+THRESHOLD = 0.35
 
 @st.cache_resource
 def load_my_model():
@@ -160,6 +160,7 @@ with tab3:
         
         while run_webcam:
             ret, frame = cap.read()
+            frame = cv2.flip(frame, 1)
             if not ret:
                 st.error("Mất tín hiệu kết nối hoặc luồng dữ liệu hình ảnh bị ngắt.")
                 break
@@ -169,7 +170,7 @@ with tab3:
             
             fire_probability = predict_image(pil_img)
             
-            if fire_probability > THRESHOLD:
+            if fire_probability > 0.7:
                 cv2.rectangle(frame_rgb, (0, 0), (frame_rgb.shape[1], frame_rgb.shape[0]), (255, 0, 0), 15)
                 text = f"CANH BAO: CO CHAY! ({fire_probability*100:.1f}%)"
                 cv2.putText(frame_rgb, text, (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 2)
