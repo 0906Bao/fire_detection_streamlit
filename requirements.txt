@@ -1,5 +1,6 @@
+--upgrade pip
 streamlit
-tensorflow-cpu
+tensorflow
 opencv-python-headless
 numpy
 Pillow
