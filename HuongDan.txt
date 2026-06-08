@@ -1,0 +1,42 @@
+1. Yêu cầu hệ thống (Prerequisites)
+Trước khi khởi chạy, hãy đảm bảo máy tính của bạn đã cài đặt sẵn:
+
+Python: Phiên bản ổn định khuyên dùng là Python 3.10 hoặc Python 3.11 (Tránh dùng Python 3.14+ để không bị lỗi xung đột thư viện TensorFlow).
+
+Trình quản lý gói: pip (đi kèm sẵn khi cài Python) hoặc môi trường ảo Miniconda / Anaconda.
+
+2. Các bước cài đặt và chạy ứng dụng ở máy cục bộ (Local)
+Bước 1: Tải mã nguồn về máy
+Mở Terminal / Command Prompt (hoặc Anaconda Prompt) lên và chạy lệnh sau để clone repository này về:
+
+	git clone https://github.com/0906Bao/fire_detection_streamlit.git
+	cd fire_detection_streamlit
+(Nếu không dùng Git, bạn có thể tải file ZIP trực tiếp từ GitHub về và giải nén ra thư mục).
+
+Bước 2: Tạo và kích hoạt môi trường ảo (Khuyên dùng)
+Để tránh xung đột thư viện với các dự án khác trên máy, bạn nên tạo một môi trường ảo sạch:
+
+Nếu sử dụng Conda (Miniconda/Anaconda):
+
+	conda create -n fire_env python=3.11 -y
+	conda activate fire_env
+Nếu sử dụng venv (Python tiêu chuẩn):
+
+	python -m venv venv
+	# Kích hoạt trên Windows:
+	venv\Scripts\activate
+	# Kích hoạt trên macOS/Linux:
+	source venv/bin/activate
+Bước 3: Cài đặt các thư viện cần thiết
+Tiến hành cài đặt tự động tất cả các gói phụ thuộc được định nghĩa sẵn trong file requirements.txt:
+
+	pip install -r requirements.txt
+Lưu ý dành cho Windows: Nếu trong quá trình cài đặt hoặc chạy file gặp lỗi ImportError: DLL load failed do chính sách bảo mật hệ thống (Application Control policy), bạn hãy thêm thư mục cài đặt Python/Miniconda vào danh sách loại trừ (Exclusion) của Windows Defender hoặc phần mềm diệt virus.
+
+Bước 4: Khởi chạy ứng dụng Streamlit
+Chạy lệnh trực tiếp sau để kích hoạt server nội bộ:
+
+	streamlit run app.py
+Sau khi chạy lệnh thành công, terminal sẽ hiển thị các địa chỉ mạng. Ứng dụng web sẽ tự động mở ra trên trình duyệt mặc định của bạn tại địa chỉ:
+
+	http://localhost:8501
