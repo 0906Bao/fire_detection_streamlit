@@ -40,3 +40,6 @@ Chạy lệnh trực tiếp sau để kích hoạt server nội bộ:
 Sau khi chạy lệnh thành công, terminal sẽ hiển thị các địa chỉ mạng. Ứng dụng web sẽ tự động mở ra trên trình duyệt mặc định của bạn tại địa chỉ:
 
 	http://localhost:8501
+
+Hoặc truy câp đường link:
+https://firedetectionapp-roo4vq4ap5ef6m7amade5e.streamlit.app/
